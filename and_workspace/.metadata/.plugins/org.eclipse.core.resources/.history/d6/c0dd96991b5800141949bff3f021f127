@@ -1,0 +1,11 @@
+package kr.or.kosta.and1020_sqlite;
+
+import android.app.Activity;
+import android.location.Geocoder;
+import android.widget.TextView;
+
+public class Ex2_GeoCoing extends Activity{
+	private Geocoder coder;
+	private TextView result;
+	
+}

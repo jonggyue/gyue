@@ -1,0 +1,57 @@
+package com.example.anitest;
+
+
+import android.app.Activity;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.widget.ImageView;
+
+public class MainActivity extends Activity{
+
+	
+
+
+	 public void onCreate(Bundle savedInstanceState) {
+	        super.onCreate(savedInstanceState);
+	        setContentView(R.layout.);
+	    }
+	   
+	    public void onWindowFocusChanged (boolean hasFocus) 
+	    {
+	     ImageView img = (ImageView)findViewById(R.id.imgv);
+	        AnimationDrawable ani;
+	        
+	        ani = getAnimation();//애니메이션을 불러옵니다.
+	        img.setBackgroundDrawable(ani);
+	        ani.start();//정상적으로 애니메이션이 구현되는예제..
+	    }
+	    
+	    public AnimationDrawable getAnimation()
+	    {
+	     AnimationDrawable ani = new AnimationDrawable();
+	     BitmapDrawable[] frame = new BitmapDrawable[10];
+	   
+	   frame[0] = (BitmapDrawable)getResources().getDrawable(R.drawable.d1);
+	   frame[1] = (BitmapDrawable)getResources().getDrawable(R.drawable.d2);
+	   frame[2] = (BitmapDrawable)getResources().getDrawable(R.drawable.d3);
+	   frame[3] = (BitmapDrawable)getResources().getDrawable(R.drawable.d4);
+	   frame[4] = (BitmapDrawable)getResources().getDrawable(R.drawable.d5);
+	   frame[5] = (BitmapDrawable)getResources().getDrawable(R.drawable.d6);
+	   frame[6] = (BitmapDrawable)getResources().getDrawable(R.drawable.d7);
+	   frame[7] = (BitmapDrawable)getResources().getDrawable(R.drawable.d8);
+	   frame[8] = (BitmapDrawable)getResources().getDrawable(R.drawable.d9);
+	   frame[9] = (BitmapDrawable)getResources().getDrawable(R.drawable.d10);
+	   
+	   for(int x = 0; x < 10; x++)
+	   {
+	    ani.addFrame(frame[x],100);
+	   }
+	   
+	   ani.setOneShot(false);
+	   return ani;
+	    }
+	 
+	
+
+}

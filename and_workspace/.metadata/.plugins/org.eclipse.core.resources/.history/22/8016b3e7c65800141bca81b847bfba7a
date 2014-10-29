@@ -1,0 +1,19 @@
+package kr.or.and1021;
+
+import com.google.android.gms.maps.GoogleMap;
+
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+
+public class PlaceMapFragmen extends FragmentActivity{
+	private GoogleMap map;
+	
+@Override
+protected void onCreate(Bundle arg0) {
+	super.onCreate(arg0);
+	setContentView(R.layout.ex2_map);
+	
+}
+	
+}

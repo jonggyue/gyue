@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<!--match_parent : 창의 크기만큼 채움
+	wrap_content : 컨텐트의 크기만큼 늘림
+ -->
+ 	<TextView  android:id="@+id/ex1_text"
+ 	    android:layout_width="match_parent"
+ 	    android:layout_height="wrap_content"
+ 	    android:text="☆☆☆☆☆"
+ 	    android:textSize="20sp"
+ 	    android:textColor="#00FF00"
+ 	    />
+    <ListView
+        android:id="@+id/ex1_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

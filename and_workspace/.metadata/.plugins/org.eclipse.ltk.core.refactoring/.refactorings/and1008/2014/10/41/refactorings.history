@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ToDay.java&apos; to &apos;Date/src/kr.or.date&apos;&#x0D;&#x0A;- Original project: &apos;and1008&apos;&#x0D;&#x0A;- Destination element: &apos;Date/src/kr.or.date&apos;&#x0D;&#x0A;- Original element: &apos;or.or.kosta.and1009.ToDay.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Date/src&lt;kr.or.date" element1="/src&lt;or.or.kosta.and1009{ToDay.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1412732264213" units="1" version="1.0"/>
+</session>

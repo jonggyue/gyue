@@ -1,0 +1,5 @@
+package kr.or.and1021;
+
+public class PlaceMapFragmen extends FragmentActivity{
+
+}

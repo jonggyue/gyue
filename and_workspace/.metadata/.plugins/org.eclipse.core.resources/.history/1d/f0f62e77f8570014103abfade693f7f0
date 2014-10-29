@@ -1,0 +1,18 @@
+package kr.or.kosta.and1020_sqlite;
+
+import android.R;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class Ex1_DBTest1 extends Activity{
+	private EditText txt, txt2;
+	private Button btn1,btn2;
+	private MyDbHelper mHelper;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.)
+	}
+}

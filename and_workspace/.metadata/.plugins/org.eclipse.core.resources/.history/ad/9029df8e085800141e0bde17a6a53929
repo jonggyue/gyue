@@ -1,0 +1,28 @@
+package kr.or.kosta.and1020_sqlite;
+
+import android.app.Activity;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class OnlyGeoLocation extends Activity{
+	// 자신의 현재 위치를 얻어내기 위해서 LocationManager를 생성함
+	LocationManager manager;
+	
+	LatLng MYLOC;
+	
+	TextView txtTime, txtBearing, txtSpeed, txtAltitude, txtProvider;
+	String locationProvider;
+	String str_my_altitude, str_my_longitude;
+	
+	LocationListener sLocationListener = null;
+	Location location;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		se
+	}
+}

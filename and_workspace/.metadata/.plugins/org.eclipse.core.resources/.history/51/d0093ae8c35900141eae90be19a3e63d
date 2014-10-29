@@ -1,0 +1,120 @@
+package com.example.touch;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.content.Context;
+import android.view.Menu;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Toast;
+
+public class Ex_Touch extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+
+		View view = new MyView(this);
+		setContentView(view);
+	}
+
+	protected class MyView extends View {
+		int start_x = 0, start_y = 0;
+		int finish_x = 0, finish_y = 0;
+		int d_x = start_x - finish_x;
+		int d_y = start_y - finish_y;
+		int count_x = 0, count_y = 0;
+
+		public MyView(Context context) {
+			super(context);
+		}
+
+		@Override
+		public boolean onTouchEvent(MotionEvent event) {
+			super.onTouchEvent(event);
+
+			// switch (event.getAction()) {
+			// case MotionEvent.ACTION_DOWN:
+			// start_x = (int) event.getX();
+			// start_y = (int) event.getY();
+			// break;
+			// case MotionEvent.ACTION_UP:
+			// finish_x = (int) event.getX();
+			// finish_y = (int) event.getY();
+			//
+			// if (Math.abs(d_x) > 50) {
+			// count_x++;
+			// } else if (Math.abs(d_y) > 50) {
+			// count_y++;
+			// }
+			// break;
+			// case MotionEvent.ACTION_CANCEL:
+			// case MotionEvent.ACTION_MOVE:
+			// default:
+			// break;
+			//
+			// }
+			// event.recycle();
+			// return true;
+
+			// event
+			// event 종류/각각의 특성
+			if (event.getAction() == MotionEvent.ACTION_DOWN) {
+				start_x = (int) event.getX();
+				start_y = (int) event.getY();
+				if (start_x < 50 && start_y < 300) {
+					count_x++;
+				} else if (start_x > 100 && start_y > 300) {
+					count_y++;
+				}
+				if (count_x == 5) {
+					String msg = "1.모션실행";
+					count_x = 0;
+					count_y = 0;
+					Toast.makeText(Ex_Touch.this, msg, Toast.LENGTH_SHORT)
+							.show();
+				} else if (count_y == 5) {
+					String msg = "2.모션실행";
+					count_x = 0;
+					count_y = 0;
+					Toast.makeText(Ex_Touch.this, msg, Toast.LENGTH_SHORT)
+							.show();
+				}
+
+			}
+
+			// if (event.getAction() == MotionEvent.ACTION_UP) {
+			// finish_x = (int) event.getX();
+			// finish_y = (int) event.getY();
+			//
+			// if (Math.abs(d_x) > 50) {
+			// count_x++;
+			// } else if (Math.abs(d_y) > 50) {
+			// count_y++;
+			// }
+			//
+			// }
+			// if (count_x == 5) {
+			// String msg = "1.모션실행";
+			// count_x = 0;
+			// count_y = 0;
+			// Toast.makeText(Ex_Touch.this, msg, Toast.LENGTH_SHORT).show();
+			// } else if (count_y == 5) {
+			// String msg = "2.모션실행";
+			// count_x = 0;
+			// count_y = 0;
+			// Toast.makeText(Ex_Touch.this, msg, Toast.LENGTH_SHORT).show();
+			// }
+
+			return true;
+
+		}
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <AutoCompleteTextView
+        android:id="@+id/ex_3autoComplete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:completionThreshold="1"
+        android:text="" />
+
+    <Button
+        android:id="@+id/ex5_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/ex_3autoComplete"
+        android:layout_alignBottom="@+id/ex_3autoComplete"
+        android:layout_toRightOf="@+id/ex_3autoComplete"
+        android:text="Button" />
+
+</RelativeLayout>
