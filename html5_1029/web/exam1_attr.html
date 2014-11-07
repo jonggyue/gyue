@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <style>
+            img{ border: 5px solid red}
+        </style>
+        <script>
+            
+            $(document).ready(function() {
+                $('img').attr(
+                        {'border':'5px solid red',
+                            'height': function(index) {
+                        if (index == 0) {
+                            return 100;
+                        } else if (index == 1) {
+                            return 250;
+                        } else if (index == 2) {
+                            return 500;
+                        }
+
+                    }});
+            });
+
+        </script>
+    </head>
+    <body>
+        <!--
+        연습 문제 : 이미지의 높이를 100,250,500으로 설정,
+        이미지의 border 모두 5px 선으로 표현
+        attr함수의 map방식으로 지정해서 구현
+        att({'':'','height':function(inx){     }});-->
+        <img src="images/heart.png"><br/>
+        <img src="images/spade.png"><br/>
+        <img src="images/diamond.png"><br/>
+    </body>
+</html>

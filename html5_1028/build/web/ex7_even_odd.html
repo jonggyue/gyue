@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               //홀수는 파랑색, 짝수는 빨간색으로 변경
+               $('tr:even').css('background', 'red');
+               $('tr:odd').css('background', 'blue');
+               //3번째 요소는 배경색은 검정, 폰트색 흰색
+               $('tr:eq(3)').css('background','black').css('color','white');
+               //동적으로 td에 폰트색상을 white로 변경해보기
+               $('tr:eq(2)').children().css('color','white');
+            });
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr><td>zero</td></tr>
+            <tr><td>two</td></tr>
+            <tr><td>three</td></tr>
+            <tr><td>four</td></tr>
+            <tr><td>five</td></tr>
+            <tr><td>six</td></tr>
+            <tr><td>seven</td></tr>
+            <tr><td>eight</td></tr>
+            <tr><td>nine</td></tr>
+            <tr><td>ten</td></tr>
+            
+        </table>
+    </body>
+</html>

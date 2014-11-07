@@ -1,0 +1,73 @@
+<!--
+    Document    : exam_star
+    Created on  : 2014. 10. 30, 오후 1:50:32
+    Author      : 1
+-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #wrap div{float: left}
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // 버튼 클릭시 ajax실행
+                $('#ggChoice').change(function(){
+                   var url = "ex3_aJaxData.jsp";
+                   var params = "groupName="+$(this).val();
+                   $.ajax({
+                       url: url,
+                       data: params,
+                       success: function(args){
+                           $("#result > #ggChoice2").html(args);
+                       },
+                       error: function(e){
+                           alert(e.responseText);
+                       }
+                   });
+                });
+                // 연습문제
+                $('#ggChoice2').change(function(){
+                   var url = "ex3_ajxImgData.jsp";
+                   //encodeURIComponent - 한글로 get방식으로 전송됬을때
+                   var params = "gname="+encodeURIComponent($(this).val());
+                   $.ajax({
+                       url: url,
+                       data: params,
+                       success: function(args){
+                           //callback된 이미지의 경로값을
+                           //이미지태그에 src속성값으로 지정
+                           $('#target').attr('src',args);
+                       },
+                       error: function(e){
+                           alert(e.responseText);
+                       }
+                   });
+                });
+                
+            });
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <div><select id="ggChoice">
+                    <option value="1">걸스데이</option>
+                    <option value="2">티아라</option>
+                </select>
+            </div>
+            <div id="result">
+                <select id="ggChoice2"><option>=선택=</option></select>
+            </div>
+            <!--연습문제-->
+            <div id="imgTarget">
+                <img src="girlImg/ya.PNG" id="target" style="width: 120px">
+            </div>
+        </div>
+    </body>
+</html>

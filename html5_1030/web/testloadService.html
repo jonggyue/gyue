@@ -1,0 +1,28 @@
+<!--
+    Document    : testloadService
+    Created on  : 2014. 10. 30, 오전 10:23:58
+    Author      : 1
+-->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="EUC-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+            $(document).ready(function(){
+                $('div').css({width:'200px', background:'yellow'})
+            });
+    </script>
+  </head>
+  <body>
+      <h1> Hello World!</h1>
+      <% for(int i=0; i<5; i++){ %> <!-- for문은 jsp로 만들자-->
+      <p>하이 </p>
+      <% } %>
+      <div>여기는 서비스 영역</div>
+  </body>
+</html>

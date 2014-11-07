@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insert title here</title>
+
+    </head>
+    <body>
+        <!-- oninput -->
+        <form oninput = "res.value=document.getElementById('out').value">
+            <fieldset>
+                <label for="out">output :</label>
+                <input type="range" name="out" id="out" min="0" max="100" step="10" value="30"/>
+                <output name="res">30</output>
+                <p><button type ="submit">SEND</button></p>
+            </fieldset>
+        </form>
+    </body>
+</html>

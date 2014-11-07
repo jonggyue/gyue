@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param><!-- 모든 서블릿에 적용가능하다-->
+        <param-name>address</param-name>
+        <param-value>경기도 분당구 삼평도 유스페이스2</param-value>/
+        </context-param>
+    <servlet>
+        <servlet-name>Ex1_LifeCycle</servlet-name>
+        <servlet-class>ex1.Ex1_LifeCycle</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Ex2_ServletConfig</servlet-name>
+        <servlet-class>ex1.Ex2_ServletConfig</servlet-class>
+        <init-param>
+            <!-- 해당 서블릿에 적용가능-->
+            <param-name>admin_id</param-name>
+            <param-value>javabook@naver.com</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>Ex2_Other</servlet-name>
+        <servlet-class>ex1.Ex2_Other</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FurstReDirect</servlet-name>
+        <servlet-class>ex2.FirstReDirect</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecondReDirect</servlet-name>
+        <servlet-class>ex2.SecondReDirect</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FirstForward</servlet-name>
+        <servlet-class>ex2.FirstForward</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SecondForward</servlet-name>
+        <servlet-class>ex2.SecondForward</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Ex1_LifeCycle</servlet-name>
+        <url-pattern>/Ex1_LifeCycle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ex2_ServletConfig</servlet-name>
+        <url-pattern>/Ex2_ServletConfig</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Ex2_Other</servlet-name>
+        <url-pattern>/Ex2_Other</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FurstReDirect</servlet-name>
+        <url-pattern>/FurstReDirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondReDirect</servlet-name>
+        <url-pattern>/SecondReDirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FirstForward</servlet-name>
+        <url-pattern>/FirstForward</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SecondForward</servlet-name>
+        <url-pattern>/SecondForward</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <context/>
+</web-app>

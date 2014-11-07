@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>div{width: 300px; height: 300px; margin: auto}</style>
+        <script>
+            // window.onload 
+            // -> 브라우저가 시작시에 [모든 자원을 다 읽고 난 뒤]에 발생하는 이벤트
+            //  = function(){} //익명함수 표현식 ";", 변수에 저장될 수 있다. 
+            window.onload = function(){test();};
+            // 자바스크립트 1차원 배열
+            var n=0;
+            var array=["red", "blue", "pink", "yellow", "green"];
+            function test(){
+                //setInterval(fn,지연시간); // 1초씩 fn함수를 호출하라
+                var inter = setInterval(function(){
+                    //종규 바보 멍충이
+                    //난 왜 배경색이 안나오는지 알았다.
+                    document.getElementById("res").style.background=array[n];
+                    if(n == array.length-1)n=0;
+                    document.getElementById("res").innerHTML=n++;
+                },1000);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="res"></div>
+    </body>
+</html>

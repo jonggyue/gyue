@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can1{ border:1px dotted black; }
+	#img1{
+		width: 357px;
+		height: 217px;
+		display: none;
+	}
+</style>
+<script>
+	window.onload=function(){
+		var can = 
+			document.getElementById('can1');
+			
+		var ctx = can.getContext("2d");
+		if(ctx){
+			//일단 문서상에서 숨겨진 이미지객체
+			//검색
+			var img = 
+			  document.getElementById("img1");
+			  
+			ctx.beginPath();
+			ctx.moveTo(170,60);
+			ctx.lineTo(300,60);
+			ctx.lineTo(300,170);
+			ctx.lineTo(170,170);
+			ctx.closePath();
+			
+			ctx.clip();  
+			  
+			//검색된 이미지객체를
+			//캔버스에 x좌표0,y좌표0 위치에 표현
+			ctx.drawImage(img,0,0);
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="can1" width="357" height="217">
+		캔버스를 지원하지 않습니다.
+	</canvas>
+	
+	<img id="img1" src="images/pic.jpg"/>
+</body>
+</html>
+
+
+
+
+
+
+
+

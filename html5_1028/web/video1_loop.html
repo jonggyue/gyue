@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Video연습</h1>
+	</header>
+	<article>
+	<!-- 파이어폭스에서는 loop가 적용되지 않음!
+		그래서 JavaScript로 loop기능을 기술함 -->
+		<video id="myvideo" controls loop>
+			<source src="media/movie/Falls.mp4"></source>
+			<source src="media/movie/Falls.ogv"></source>
+		</video>
+	</article>
+	
+	<script>
+		// video의 내용이 끝이날때를 인식하는
+		//이벤트
+		$("#myvideo").bind("ended",function(){
+			//현재 영역은 myvideo에 end이벤트가
+			//발생했을 때 수행하는 부분
+			//그러므로 this는 myvideo를 의미한다.
+			this.play();
+		});
+	</script>
+</body>
+</html>
+
+
+
+

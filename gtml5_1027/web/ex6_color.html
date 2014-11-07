@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #wrap{
+                /*wrap이란 div에만 스타일을 적용하겠다*/
+                width: 500px; height: 200px; margin: auto;
+                border: 1px solid red;
+            }
+        </style>
+        <script>
+            
+            function test(){
+                
+                document.getElementById("wrap").style.backgroud = document.getElementById("cc").value;
+                
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div id="wrap">
+            <form>
+                <fieldset>
+                    <label>Color :</label>
+                    <input type="color" name="cc" id="cc">
+                    <p>
+                        <button type="button" onclick="test()">
+                            Send
+                        </button>
+                    </p>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+    <!-- 연습문제 : num1 num2의 값을  * 연산 하시오.-->
+	<form>
+		<fieldset>
+			<label for="num1">output Test:</label>
+			<input type="number" name="num1"
+			id="num1" min="0" max="10"
+			value="3"/>
+			*
+			<input type="number" name="num2"
+			id="num2" min="0" max="10"
+			value="5"/>
+	<output onformchange="value=this.form.num1.value * this.form.num2.value">15</output>
+			
+			<p><button type="submit">SEND</button></p>
+		</fieldset>
+	</form>
+</body>
+</html>

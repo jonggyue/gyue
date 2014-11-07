@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <style>
+            #res{width: 300px; background: pink}
+            .cng{background: red; color: white}
+            p{color: blue}
+        </style>
+        <script>
+            $(document).ready(function() {
+                //연결하는 메서드
+                $('h1').bind({
+                    //click을 바인드 시켜서 -h1-<p>마이러브!</p>
+                    click: function() {
+                        $(this).html(function(idx, html) {
+                            return "<p> 마이러브!" + "</p>";
+                        });
+                    },
+                    mouseenter: function() {
+                        $(this).addClass('cng');
+                    },
+                    mouseleave: function() {
+                        $(this).removeClass('cng');
+                    }
+                    
+                });
+            });
+        </script>
+    </head>
+    <body>
+
+        <h1 id='a'>Hello World!</h1>
+        <h1>Hello World!</h1>
+        <h1>Hello World!</h1>
+        <div id='res'></div>
+    </body>
+</html>

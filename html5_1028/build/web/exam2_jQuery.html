@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var n =0;
+                var color;
+                var inter = setInterval(function() {
+                    if($('div').children().eq(n).text()==' Five '){
+                        color='blue';
+                    }else{
+                        color='red';
+                    }
+                    var $node2 = $('div').children().eq(n).css('background',color);
+                    n++;
+                    if(n>$('div').children().size()){
+                        $('div').children().css('background','white');
+                        n=0;
+                    }
+                    
+                }, 1000);
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <em> One </em>
+            <a> Two </a>
+            <a> Three </a>
+            <b> Four </b>
+            <a> Five </a>
+            <em> Six </em>
+        </div>
+    </body>
+</html>

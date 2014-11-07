@@ -1,0 +1,46 @@
+<!--
+    Document    : innerFade
+    Created on  : 2014. 10. 29, 오후 1:41:58
+    Author      : 1
+-->
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            *{margin: 0px;
+              padding: 0px;}
+            ul{list-style: none;}
+            img{width: 200px;}
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="js/jquery.innerfade.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#inner_fade').innerfade({
+                    animationtype: 'slide', //내용의 변경효과 fade, slide
+                    speed: 750, // 내용의 변경속도
+                    timeout: 2000, // 변경효과가 적용되는 속도
+                    type: 'random', // 내용의 변경방식: sequence,random,random_start
+                    containerheight: '1em' // 내용의 높이
+                    //다른거 적용
+                    // animationtype: 'fade',
+                    // cotainerheight: '350px'
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h1>InnerFade</h1>
+        <ul id="inner_fade">
+            <li><img src="images/heart.png"></li>
+            <li><img src="images/spade.png"></li>
+            <li><img src="images/diamond.png"></li>
+            <li><img src="images/club.png"></li>
+        </ul>
+    </body>
+</html>

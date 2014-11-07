@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <script>
+            var ctx;
+            window.onload = function() {
+                // 1)캔버스 얻기
+                var can = document.getElementById("can1");
+                // 2) 2D그림을 그릴 객체 구하기
+                ctx = can.getContext("2d");
+                if (ctx) {
+                    // 3) 원하는 그리기 수행
+                    ctx.fillStyle = "green";//색상 지정
+                    ctx.fillRect(10, 25, 100, 100);//x,y,w,h	
+                }
+            }
+            var n = 0;
+            // 스크립트에서 인트형변환 (int)xxxxx ==>Math.floor();
+            // parseInt()도 가능
+            // 문자<->넘버 형변환
+            //Number(), String()
+            var rgb = "rgba("+Math.floor(Math.random()*255)+",0,0,5)";
+            function myDrawRec() {
+                // 연습문제 : rgb 0~255의 값을 Math.random() 적용해서
+                // 클릭될?때 마다 색상이 변경되도록 구현해보자.
+                if (n == 0) {
+                    ctx.lineWidth = 5;
+                    ctx.strokeStyle = rgb;
+                    //그리고자 하는 속성설정을
+                    //마쳤으니 그리기API함수 호출
+                    ctx.strokeRect(5, 20, 110, 110);
+                }
+                n++;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width: 300px; margin: auto">
+            <canvas id="can1" width="400" height="200">
+                캔버스를 지원하지 않습니다.
+            </canvas>
+            <input type="button" value="테두리" onclick="myDrawRec()">
+        </div>     
+    </body>
+</html>

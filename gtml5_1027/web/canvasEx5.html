@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can1{ border:1px dotted black; }
+</style>
+<script>
+	window.onload=function(){
+		var can = 
+			document.getElementById('can1');
+			
+		var ctx = can.getContext("2d");
+		if(ctx){
+			// 선 두께는 5, 선 색은 파랑,
+			// 색채우기는 빨강
+			ctx.lineWidth = 5;
+			ctx.strokeStyle = "blue";
+			ctx.fillStyle = "red";
+			
+			// 점과 선들의 집합인 path의 시작!
+			ctx.beginPath();
+			ctx.moveTo(25,175);
+			ctx.lineTo(50,25);
+			ctx.lineTo(125,50);
+			ctx.lineTo(175,175);			
+			
+			ctx.stroke();//path에 집합된 
+			//모든 것을 그려라!
+			
+			ctx.beginPath();
+			ctx.moveTo(225,175);
+			ctx.lineTo(250,25);
+			ctx.lineTo(325,30);
+			ctx.lineTo(375,175);
+			ctx.closePath();//현재 지점과
+			//시작지점을 연결하여 닫는다.
+			ctx.stroke();
+			
+			
+			ctx.beginPath();
+			ctx.moveTo(425,175);
+			ctx.lineTo(450,25);
+			ctx.lineTo(525,30);
+			ctx.lineTo(575,175);
+			ctx.closePath();
+			ctx.fill();
+			ctx.stroke();
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="can1" width="600" height="300">
+		캔버스를 지원하지 않습니다.
+	</canvas>
+</body>
+</html>

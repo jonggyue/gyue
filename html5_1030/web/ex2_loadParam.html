@@ -1,0 +1,49 @@
+<!--
+    Document    : ex2_loadParam
+    Created on  : 2014. 10. 30, 오전 11:24:42
+    Author      : 1
+-->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="EUC-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+            $(document).ready(function(){
+                //$menu로 축약해서 정의
+                var $menu = $('.menu > input');
+                $menu.click(function(){
+                   //alert('test!');
+                   //서버로 보내기 위한 버튼의 vaule
+                   var $val = $(this).val();
+                   console.log('클릭한 값 : '+$val);
+                   // 서버로 데이터를 get방식으로 전송 후 callback받기
+                   $('#new-projects').load('LoadData_Servlet?num='+$val+" li",
+                   function(resp,status,xhr){
+                       console.log('resp:'+resp);
+                       console.log('status:'+status);
+                       console.log('xhr:'+xhr.statusText); //OK
+                       if(status == "error"){
+                           var msg = "페이지오류";
+                           $('#error').html(msg+','+xhr.status+","+xhr.xhr.statusText);
+                       }
+                   });
+                });
+            });
+    </script>
+  </head>
+  <body>
+      <div class="menu">
+          <input type="button" value="Click1">
+          <input type="button" value="Click2">
+      </div>
+      <!--<input type="button" value="noClick">-->
+      <b>Projects : </b>
+      <ol id="new-projects"></ol>
+      <div id="error"></div>
+  </body>
+</html>

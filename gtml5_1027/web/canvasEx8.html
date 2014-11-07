@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can1{ border:1px dotted black; }
+</style>
+<script>
+	window.onload=function(){
+		var can = 
+			document.getElementById('can1');
+			
+		var ctx = can.getContext("2d");
+		if(ctx){
+			var str = "ShinHan DataSystem";
+			
+			ctx.shadowColor = "#000";
+			ctx.shadowOffsetX = 5;
+			ctx.shadowOffsetY = 5;
+			ctx.shadowBlur = 10;
+			
+			ctx.fillStyle = "rgba(0,0,255,1)";
+			ctx.fillRect(20,20,200,100);
+			//------------------------------
+			ctx.shadowColor = 
+				"rgba(0,100,100,0.5)";
+			ctx.shadowOffsetX = 5;
+			ctx.shadowOffsetY = 5;
+			ctx.shadowBlur = 5;
+			ctx.font = "25pt Georgia";
+			ctx.fillText(str,20,150);
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="can1" width="600" height="300">
+		캔버스를 지원하지 않습니다.
+	</canvas>
+</body>
+</html>

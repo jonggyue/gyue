@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            var col = ["red", "blue", "yellow", "green", "pink"];
+            var n = 0;
+            var rand;
+            $(document).ready(function() {
+                var inter = setInterval(function() {
+                    var r = Math.floor(Math.random()*256);
+                    var g = Math.floor(Math.random()*256);
+                    var b = Math.floor(Math.random()*256);
+                    rand = "rgb("+r+","+g+","+b+")"
+                    if (n < col.length) {
+                        $('#can1').css('width', '300px').css('height', '300px')
+                                .css('background', col[n]).css('marginTop', '30px').text("Num :" + n);
+                        $('#can2').css('width', '300px').css('height', '300px')
+                                .css('background', rand).css('marginTop', '30px').text("Num :" + n);
+                        n++;
+                    } else {
+                        n = 0;
+                    }
+                }, 1000);
+
+
+
+            });
+        </script>
+    </head>
+    <body>
+        <div id="can1"></div>
+        <div id="can2"></div>
+    </body>
+</html>

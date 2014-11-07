@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can1{ border:1px dotted black; }
+</style>
+<script>
+	window.onload=function(){
+		var can = 
+			document.getElementById('can1');
+			
+		var ctx = can.getContext("2d");
+		if(ctx){
+			var str = "ShinHan DataSystem";
+			
+			ctx.fillText(str,20,20);// 기본
+			
+			//글꼴의 크기와 글꼴 지정
+			ctx.font = "25pt Georgia";
+			ctx.fillText(str,20,60);
+			
+			//글꼴색 지정
+			ctx.fillStyle = "blue";
+			ctx.fillText(str,20,100);
+			
+			//글꼴 재설정
+			ctx.font = "36pt Verdana";
+			ctx.fillStyle = "pink";
+			ctx.textBaseline = "middle";
+			ctx.strokeStyle = 
+					"rgba(0,255,0,0.8)";
+			ctx.fillText(str,20,130);
+			ctx.strokeText(str,20,130);
+			
+			
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="can1" width="600" height="300">
+		캔버스를 지원하지 않습니다.
+	</canvas>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#can1{ border:1px dotted black; }
+	
+</style>
+<script>
+	window.onload=function(){
+		var can = 
+			document.getElementById('can1');
+			
+		var ctx = can.getContext("2d");
+		if(ctx){
+			ctx.globalAlpha = 1;
+			
+			//상자를 8개를 그리기위해
+			// 각 상자의 x,y,w,h값들을
+			// 서버측으로부터 JSON표기법으로
+			// 받았다고 가정하자!
+			var rect = [
+				{x:20, y:20, w:75, h:75},
+				{x:40, y:50, w:75, h:75},
+				{x:150, y:20, w:75, h:75},
+				{x:170, y:50, w:75, h:75},
+				{x:280, y:20, w:75, h:75},
+				{x:300, y:50, w:75, h:75},
+				{x:410, y:20, w:75, h:75},
+				{x:430, y:50, w:75, h:75}
+			];
+			
+			for(var i=0; i<rect.length ; i+=2){
+				ctx.fillStyle = "#00f";
+				
+				//상자 그리기
+				ctx.fillRect(
+					rect[i].x,
+					rect[i].y,
+					rect[i].w,
+					rect[i].h);
+				
+				
+				ctx.fillStyle = "#f00";
+				ctx.fillRect(
+					rect[i+1].x,
+					rect[i+1].y,
+					rect[i+1].w,
+					rect[i+1].h);
+					
+				ctx.globalAlpha -= 0.3;
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<canvas id="can1" width="600" height="300">
+		캔버스를 지원하지 않습니다.
+	</canvas>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+

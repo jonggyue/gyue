@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            // -브라우저가 시작될 때 모든 Resource(image,movie,dom...)
+            // 모든자원을 읽고 나서 시작된다
+//            window.onload=function(){
+//                
+//            }
+            // Dom만 기다리다가 실행됨 
+            $(document).ready(function() {
+                // Element, id, class 로 선택자를 사용할 수있다.
+                //css('스타일','값') -> 체이닝방식!- 연달아 사용
+                //$('Element')->3개, 집합요소 (NodeList)
+                // 체이닝방식->css, 다른 객체의 요소라면 이렇게 사용가능
+                $('div').css('width', '300px').css('height', '100px')
+                        .css('background', 'pink').css('marginTop', '30px');
+                //맵방식-> 가독성이 뛰어나게 오브젝트형식으로
+                $('#p1').css({'color':'red','fontSize':'30pt','width':'600px','border':'1px solid pink', 'textAlign':'center'});
+                $('.c1').css({'color':'red','fontSize':'10pt','width':'300px','textAlign':'center'});
+                $('div, span').text('우히히히히');
+                // 태그,id,class 레퍼런스를 부를때 'div','#p1','.c1'
+            });
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div>TODO write content</div>
+        <div>TODO write content</div>
+        <p id="p1">TODO write content</p>
+        <span class="c1">TODO write content</span> <!-- span태그:한문장단위-->
+        <p class="c1">TODO write content</p>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+<style>
+#logo1 {
+	width: 400px;
+	height: 400px;
+	text-indent: -999px;
+	background-image: url('img/g1.PNG');
+	background-repeat: no-repeat;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+</style>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#main ul li a').click(function(idx) {
+			$(this).attr("href","#sub1");
+			var imgsrc = $(this).children("img").attr("src");
+			var title = $(this).children("h3").text();
+			var cont = $(this).children("p").text();
+			$('#imgtarget img').attr("src",imgsrc).attr("width","80px");
+			$('#sub1 .content').children("h2").text(title);
+			$('#sub1 .content').children("p:eq(1)").text(cont);
+
+		});
+	});
+</script>
+<title>JQuery Mobile Test2</title>
+</head>
+<body>
+	<div data-role="page" data-theme="b" id="main">
+		<div data-role="header">
+			<h1 id="logo">Kosta86기 파견 기자 뉴스</h1>
+		</div>
+		<div data-role="content">
+			<ul data-role="listview">
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/kr.png"
+						class="ui-shadow-icon">
+						<h3>대한민국</h3>
+						<p>아시아 대륙의 북동부에 있는 한반도의 중남부에 위치한 민주공화국.</p>
+				</a></li>
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/jp.png"
+						class="ui-shadow-icon">
+						<h3>일본</h3>
+						<p>아시아대륙 동쪽에 북동에서 남서 방향으로 이어지는 일본열도를 차지하는 섬나라.</p>
+				</a></li>
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/us.png"
+						class="ui-shadow-icon">
+						<h3>미국</h3>
+						<p>북아메리카 대륙의 캐나다와 멕시코 사이에 있는 국가. 정식명칭은 아메리카 합중국이다.</p>
+				</a></li>
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/br.png"
+						class="ui-shadow-icon">
+						<h3>브라질</h3>
+						<p>남아메리카 대륙의 중앙부에 있는 나라. 정식명칭은 브라질연방 공화국이다.</p>
+				</a></li>
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/kp.png"
+						class="ui-shadow-icon">
+						<h3>북한</h3>
+						<p>아시아 한반도 북쪽에 있는 공산주의 정권.</p>
+				</a></li>
+				<li><a href="#sub1" data-role=button data-transition="pop"> <img src="img/tr.png"
+						class="ui-shadow-icon">
+						<h3>터키</h3>
+						<p>아시아 대륙 서쪽 끝에 있는 나라. 터키의 정식명칭은 터키공화국이다. 지리학상으로 동서양의 교차로에 있어 문화가 혼재되어 있다.</p>
+				</a></li>
+			</ul>
+		</div>
+		<div data-role="footer">
+			<h3 id="logo1">footer</h3>
+		</div>
+	</div>
+	<!-- 
+			첫번째 페이지에서 선택한 내용을 두번째 sub1페이지에서 출력이 되도록
+			jQuery로 개발 하시오.
+		 -->
+	<div data-role="page" id="sub1" data-theme="b">
+		<div data-role="header">
+			<h1 id="logo2">Kosta86기 파견 기자 뉴스</h1>
+		</div>
+		<div data-role="content" class="content">
+			<h2></h2>
+			<p id="imgtarget">
+				<img>
+			</p>
+			<p id="cont"></p>
+			<p>
+				<a href="#main" data-role="button" data-transition="flip">button</a>
+			</p>
+		</div>
+
+		<div data-role="footer">
+			<h3 id="logo2">footer</h3>
+		</div>
+	</div>
+</body>
+</html>

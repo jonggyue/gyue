@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Insert title here</title>
+        <style>
+            #can{ border:1px dotted black; }
+        </style>
+        <script>
+            var num=0;
+            var idv=0;
+            window.onload=function(){
+                idv=setInterval(draw,500);
+            }
+
+            function draw() {
+                var ctx = document.getElementById("can").getContext("2d");
+                ctx.beginPath();
+                if(num<=360){
+                    num+=10;
+                }else{
+                    clearInterval(idv);
+                }
+                ctx.arc(100,100,50,0,(Math.PI/180)*num,false);
+                ctx.fillStyle="rgb(0.255,255)";
+                ctx.fill();
+                ctx.stroke();
+            }
+        </script>
+    </head>
+    <body>
+        <canvas id="can" width="600" height="300">
+            캔버스를 지원하지 않습니다.
+        </canvas>
+      
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JSP Page</title>
+        <style>
+            table{ table-layout: auto; width: 75%;}
+            td{ color: blue; font-weight: bold}
+            .selectedstyle{
+                color: red; font-size: 20pt;
+                background-color: pink;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            //css는 동적동작이 필요할때만 쓰고 아니면 style에서 정의
+            $(document).ready(function(){
+               var $first = $('tr:first');
+               var $last = $('tr:last');
+               $first.addClass('selectedstyle');
+               $last.addClass('selectedstyle');
+            });
+            
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr><td>one</td></tr>
+            <tr><td>two</td></tr>
+            <tr><td>three</td></tr>
+            <tr><td>four</td></tr>
+            <tr><td>five</td></tr>
+        </table>
+    </body>
+</html>

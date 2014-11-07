@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <!-- 내부 -->
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            //주석
+            /*주석*/
+            var num = 10; //전역변수
+            function test() {
+                var n = 20; //지역변수
+                n = num + n;
+                //alert("경고창:"+n);//블로킹메서드라서 서비스에서는 잘쓰지않는다
+                console.log("요즘 대세는 alert가 아닌 콘솔 : " + n);
+                // document.getElementById("res")
+                // DOM객체에 아이디로 찾아서 접근해라
+                // 속성에서 id는 유일해야 한다.
+                // dom.innerHTML=값
+                // 블록 레벨요소처럼 값을 표현할 Element에게
+                // html을 적용시켜라.
+                document.getElementById("res").innerHTML = n;
+                // 스타일을 변경해보고 싶다.
+                document.getElementById("res").style.backgroud='red';
+            }
+        </script>
+    </head>
+    <!-- 표현층-->
+    <body>
+        <!-- div : 하나의 블럭으로 차지하고 있음:블럭레벨요소
+        input : 인라인요소-->
+        <div id="res" style="width: 300px; height: 100px; margin: auto; background: pink;">TODO write content</div>
+        <input type="button" value="click" onclick="test()">
+    </body>
+</html>

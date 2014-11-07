@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="EUC-KR">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               var col = ['red','green','blue'];
+               var resText="";//결과를 출력할 변수
+               // 유지보수나 수정에 편의를 위해서 변수에 저장하는 방식을 권장합니다.
+               var $searchEles = $('p, span, div.simpletext1');
+               resText = "검색된 Elment 의수:"+$searchEles.length+"\n"; //갯수
+               $searchEles.each(function(idx){
+                  // each가 요소로부터 가져온 주소 $(this()
+                  resText += $(this).css("backgroundColor", col[idx]).text(idx);
+               });
+               console.log($.trim(resText))//trim공백제거
+            });
+        </script>
+    </head>
+    <body>
+        <!-- span은 인라인요소이지만 block으로 줄수 있다-->
+        <span style="display: block; width: 300px">simple</span>
+        <div class="simpletext1">My Jquery</div>
+        <div>Toast</div>
+        <p>simple</p>
+    </body>
+</html>

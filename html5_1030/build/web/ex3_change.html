@@ -1,0 +1,36 @@
+<!--
+    Document    : ex3_change
+    Created on  : 2014. 10. 30, 오후 1:44:43
+    Author      : 1
+-->
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="EUC-KR">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script>
+            $(document).ready(function(){
+                // onChange의 속성과 같음!
+                $('#sel').change(function(){
+                   $('#res').html($(this).val()); 
+                });
+            });
+    </script>
+  </head>
+  <body>
+      <select name="sel" id="sel">
+          <option value="">선택</option>
+          <option value="A">에이</option>
+          <option value="B">비이</option>
+          <option value="C">씨이</option>
+          <option value="D">디이</option>
+          <option value="E">이2</option>
+      </select>
+      <img>
+      <div id="res">TODO write content</div>
+  </body>
+</html>
